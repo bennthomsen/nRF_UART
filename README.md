@@ -4,3 +4,6 @@ This App implements a simple text based send and receive service.
 
 To test this code with the nRF51822 mbed KIT you need to run BLE_LoopackUART which is available
 http://developer.mbed.org/teams/Bluetooth-Low-Energy/code/BLE_LoopbackUART/
+
+I have also created a version of this code that lets you switch LED2 on and off over BLE
+http://developer.mbed.org/teams/UCL-IoT/code/BLE_UART_LEDControl_Echo/
