@@ -1,4 +1,4 @@
-package com.wordpress.bennthomsen.bleuart;
+package com.wordpress.bennthomsen.bleuartLED;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wordpress.bennthomsen.bleuart;
+package com.wordpress.bennthomsen.bleuartLED;
 
         import java.util.ArrayList;
         import java.util.HashMap;
@@ -27,8 +27,6 @@ package com.wordpress.bennthomsen.bleuart;
         import android.bluetooth.BluetoothAdapter;
         import android.bluetooth.BluetoothDevice;
         import android.bluetooth.BluetoothManager;
-        import android.content.BroadcastReceiver;
-        import android.content.ComponentName;
         import android.content.Context;
         import android.content.Intent;
         import android.content.IntentFilter;
@@ -37,8 +35,6 @@ package com.wordpress.bennthomsen.bleuart;
         import android.graphics.Color;
         import android.os.Bundle;
         import android.os.Handler;
-        import android.os.IBinder;
-        import android.os.Message;
         import android.util.Log;
         import android.view.Gravity;
         import android.view.LayoutInflater;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wordpress.bennthomsen.bleuart;
+package com.wordpress.bennthomsen.bleuartLED;
 
         import android.app.Service;
         import android.bluetooth.BluetoothAdapter;
