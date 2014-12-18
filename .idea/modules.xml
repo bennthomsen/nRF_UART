@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BLEUART.iml" filepath="$PROJECT_DIR$/BLEUART.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BLE_mbed_LED_Remote.iml" filepath="$PROJECT_DIR$/BLE_mbed_LED_Remote.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

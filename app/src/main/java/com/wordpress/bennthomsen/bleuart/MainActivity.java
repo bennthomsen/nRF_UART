@@ -50,10 +50,12 @@ package com.wordpress.bennthomsen.bleuart;
         import android.view.View;
         import android.widget.ArrayAdapter;
         import android.widget.Button;
+        import android.widget.CompoundButton;
         import android.widget.EditText;
         import android.widget.LinearLayout;
         import android.widget.ListView;
         import android.widget.RadioGroup;
+        import android.widget.Switch;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -65,6 +67,9 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private static final int UART_PROFILE_CONNECTED = 20;
     private static final int UART_PROFILE_DISCONNECTED = 21;
     private static final int STATE_OFF = 10;
+    private static final String LED2OFF = "led2 off";
+    private static final String LED2ON = "led2 on";
+
 
     TextView mRemoteRssiVal;
     RadioGroup mRg;
@@ -75,6 +80,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private ListView messageListView;
     private ArrayAdapter<String> listAdapter;
     private Button btnConnectDisconnect,btnSend;
+    private Switch Led2SwitchToggle;
     private EditText edtMessage;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,6 +98,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
         messageListView.setDivider(null);
         btnConnectDisconnect=(Button) findViewById(R.id.btn_select);
         btnSend=(Button) findViewById(R.id.sendButton);
+        Led2SwitchToggle=(Switch) findViewById(R.id.led2Switch);
         edtMessage = (EditText) findViewById(R.id.sendText);
         service_init();
 
@@ -145,6 +152,25 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                     e.printStackTrace();
                 }
 
+            }
+        });
+
+        // Handler LED Switch
+
+        Led2SwitchToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                byte[] value;
+                try {
+                    if (isChecked) {
+                        value = LED2ON.getBytes("UTF-8");    // The switch is on
+                    } else {
+                        value = LED2OFF.getBytes("UTF-8");     // The switch is off
+                    }
+                    mService.writeRXCharacteristic(value);
+                } catch (UnsupportedEncodingException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
 
